@@ -1,0 +1,84 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+:root {
+  --c-canvas: 250 250 246;
+  --c-card: 255 255 255;
+  --c-elevated: 255 255 255;
+  --c-line: 234 233 226;
+  --c-ink: 23 24 26;
+  --c-muted: 108 111 118;
+  --c-faint: 245 245 240;
+  --c-accent: 206 240 63;
+  --c-accent-ink: 26 32 0;
+  --c-sidebar: 13 14 16;
+  --c-sidebar-line: 33 35 39;
+  --c-sidebar-ink: 244 245 246;
+  --c-sidebar-muted: 148 151 158;
+  --c-positive: 22 145 92;
+  --c-warning: 190 122 12;
+  --c-negative: 199 62 55;
+  --c-info: 44 106 200;
+}
+.dark {
+  --c-canvas: 11 12 14;
+  --c-card: 20 22 26;
+  --c-elevated: 26 29 34;
+  --c-line: 38 41 48;
+  --c-ink: 243 244 246;
+  --c-muted: 143 147 156;
+  --c-faint: 26 29 34;
+  --c-accent: 206 240 63;
+  --c-accent-ink: 20 25 0;
+  --c-sidebar: 8 9 11;
+  --c-sidebar-line: 30 32 37;
+  --c-sidebar-ink: 244 245 246;
+  --c-sidebar-muted: 138 141 149;
+  --c-positive: 52 190 130;
+  --c-warning: 226 160 46;
+  --c-negative: 235 104 96;
+  --c-info: 96 156 246;
+}
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: rgb(var(--c-canvas));
+  color: rgb(var(--c-ink));
+  -webkit-font-smoothing: antialiased;
+}
+*:focus-visible {
+  outline: 2px solid rgb(var(--c-accent));
+  outline-offset: 2px;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--c-line));
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
