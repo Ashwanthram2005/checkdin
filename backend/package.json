@@ -1,0 +1,17 @@
+{
+  "name": "checkdin-backend",
+  "version": "1.0.0",
+  "description": "CheckDin Backend - Fastify + PostgreSQL",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node seed.js",
+    "test": "node test_all.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "fastify": "^5.2.1",
+    "@fastify/cors": "^11.0.1",
+    "pg": "^8.13.1"
+  }
+}

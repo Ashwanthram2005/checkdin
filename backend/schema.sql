@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS admin_users (
   id TEXT PRIMARY KEY, name TEXT NOT NULL, email TEXT UNIQUE NOT NULL,
   password_hash TEXT NOT NULL, role TEXT NOT NULL, role_name TEXT NOT NULL,
   status TEXT NOT NULL DEFAULT 'Active', two_factor INTEGER DEFAULT 0,
-  last_active TEXT, created_at TEXT DEFAULT (datetime('now'))
+  last_active TEXT, created_at TEXT DEFAULT NOW()
 );
 CREATE TABLE IF NOT EXISTS partners (
   id TEXT PRIMARY KEY, name TEXT NOT NULL, company TEXT NOT NULL,
@@ -169,7 +169,7 @@ CREATE TABLE IF NOT EXISTS partner_audit_logs (
   detail TEXT DEFAULT '', category TEXT NOT NULL
 );
 CREATE TABLE IF NOT EXISTS login_activities (
-  id TEXT PRIMARY KEY, property_id TEXT, user TEXT NOT NULL, role TEXT NOT NULL,
+  id TEXT PRIMARY KEY, property_id TEXT, "user" TEXT NOT NULL, role TEXT NOT NULL,
   login_time TEXT NOT NULL, logout_time TEXT, device TEXT NOT NULL,
   ip TEXT NOT NULL, location TEXT NOT NULL
 );
@@ -184,5 +184,13 @@ CREATE TABLE IF NOT EXISTS property_leads (
   property_type TEXT NOT NULL, total_rooms INTEGER DEFAULT 0,
   short_stay_interest INTEGER DEFAULT 0, couple_friendly INTEGER DEFAULT 0,
   source TEXT DEFAULT '', comments TEXT DEFAULT '', consent INTEGER DEFAULT 0,
-  created_at TEXT DEFAULT (datetime('now'))
+  created_at TEXT DEFAULT NOW()
+);
+CREATE TABLE IF NOT EXISTS settings (
+  key TEXT PRIMARY KEY, value TEXT NOT NULL, updated_at TEXT DEFAULT NOW()
+);
+CREATE TABLE IF NOT EXISTS cms_content (
+  id TEXT PRIMARY KEY, type TEXT NOT NULL, title TEXT NOT NULL,
+  data TEXT DEFAULT '{}', status TEXT DEFAULT 'Active',
+  sort_order INTEGER DEFAULT 0, created_at TEXT DEFAULT NOW(), updated_at TEXT DEFAULT NOW()
 );
