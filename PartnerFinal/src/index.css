@@ -1,0 +1,70 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.scroll-slim::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-slim::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 999px;
+}
+/* Dark mode — PartnerOS repaints the surface tokens rather than every component. */
+.dark {
+  color-scheme: dark;
+}
+.dark .scroll-slim::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+}
+.dark .bg-canvas {
+  background-color: #0a0a0a;
+}
+.dark .bg-white,
+.dark .bg-white\/95 {
+  background-color: #151515;
+}
+.dark .bg-neutral-50,
+.dark .bg-neutral-50\/70,
+.dark .bg-neutral-50\/60,
+.dark .bg-neutral-100 {
+  background-color: #1e1e1e;
+}
+.dark .text-ink {
+  color: #f4f4f4;
+}
+.dark .text-ink-soft {
+  color: #cfcfcf;
+}
+.dark .text-ink-muted {
+  color: #9a9a9a;
+}
+.dark .border-neutral-100,
+.dark .border-neutral-200,
+.dark .border-neutral-200\/80,
+.dark .border-neutral-300 {
+  border-color: #2c2c2c;
+}
+.dark input,
+.dark select,
+.dark textarea {
+  background-color: #1b1b1b;
+  color: #f4f4f4;
+}
+.dark .shadow-card {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
