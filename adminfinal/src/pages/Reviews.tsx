@@ -26,7 +26,7 @@ export function Reviews() {
   const [rating, setRating] = useState('All ratings');
   const [responding, setResponding] = useState<Review | null>(null);
 
-  const reviews = data ?? [];
+  const reviews = data?.data ?? []
 
   const counts = useMemo(() => {
     const result: Record<string, number> = { All: reviews.length };
