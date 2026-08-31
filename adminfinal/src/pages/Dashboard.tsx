@@ -88,7 +88,7 @@ export function Dashboard() {
   const osUnread = os.notifications.filter((row) => !row.read && !row.archived).length;
   const osAttention = osQueues.reduce((sum, queue) => sum + queue.value, 0);
 
-  const recent = (bookings ?? []).slice(0, 6);
+  const recent = (bookings?.data ?? []).slice(0, 6);
   const pendingProperties = properties.filter((property) => property.status === 'Pending Approval');
   const pendingPartners = partners.filter((partner) => partner.status === 'Pending KYC');
   const newPartners = [...partners].sort((a, b) => b.joinedAt.localeCompare(a.joinedAt)).slice(0, 4);
