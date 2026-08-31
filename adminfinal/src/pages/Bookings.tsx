@@ -29,7 +29,7 @@ export function Bookings() {
   const [city, setCity] = useState('All cities');
   const [source, setSource] = useState('All sources');
 
-  const bookings = data ?? [];
+  const bookings = data?.data ?? [];
 
   const counts = useMemo(() => {
     const result: Record<string, number> = { All: bookings.length };
