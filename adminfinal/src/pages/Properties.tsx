@@ -32,7 +32,7 @@ export function Properties() {
   const [type, setType] = useState('All types');
   const [rejecting, setRejecting] = useState<Property | null>(null);
 
-  const properties = data ?? [];
+  const properties = data?.data ?? [];
 
   const counts = useMemo(() => {
     const result: Record<string, number> = { All: properties.length };
