@@ -155,7 +155,7 @@ export function Dashboard() {
       <header className="mb-6 flex flex-wrap items-end justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold tracking-tight text-ink sm:text-[28px]">
-            Welcome back, {user?.name.split(' ')[0] ?? 'Admin'}
+            Welcome back, {user?.name?.split(' ')[0] ?? 'Admin'}
           </h1>
           <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted">
             {role ?
