@@ -31,7 +31,7 @@ export function Rooms() {
   const [addOpen, setAddOpen] = useState(false);
   const [editing, setEditing] = useState<Room | null>(null);
 
-  const rooms = data ?? [];
+  const rooms = data?.data ?? [];
 
   const counts = useMemo(() => {
     const result: Record<string, number> = { All: rooms.length };
