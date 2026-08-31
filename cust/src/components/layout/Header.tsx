@@ -88,7 +88,7 @@ export function Header() {
                   {initialsOf(user.name) || 'G'}
                 </span>
                 <span className="max-w-[120px] truncate text-sm font-semibold">
-                  {user.name.split(' ')[0]}
+                  {user.name?.split(' ')[0] ?? 'Admin'}
                 </span>
               </button>
 
