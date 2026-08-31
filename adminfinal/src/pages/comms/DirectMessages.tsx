@@ -133,8 +133,8 @@ export function DirectMessages() {
 
               <ChatPane
               messages={threadMessages}
-              peerName={peer.name.split(' ')[0]}
-              placeholder={`Message ${peer.name.split(' ')[0]}…`}
+              peerName={peer.name?.split(' ')[0] ?? 'Guest'}
+              placeholder={`Message ${peer.name?.split(' ')[0] ?? 'Guest'}…`}
               onSend={(body, priority, attachmentName) =>
               sendMessage({ threadId: activeId, body, priority, attachmentName }, true)
               }
