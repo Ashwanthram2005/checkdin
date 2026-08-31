@@ -28,7 +28,7 @@ export function Refunds() {
   const [approving, setApproving] = useState<Refund | null>(null);
   const [rejecting, setRejecting] = useState<Refund | null>(null);
 
-  const refunds = data ?? [];
+  const refunds = data?.data ?? []
 
   const counts = useMemo(() => {
     const result: Record<string, number> = { All: refunds.length };
